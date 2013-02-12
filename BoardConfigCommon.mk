@@ -25,16 +25,18 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-BOARD_FAMILY := celox
+BOARD_FAMILY := dali
 
 # inherit from common msm8660
 -include device/samsung/msm8660-common/BoardConfigCommon.mk
 
 # Kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true zcache
-BOARD_KERNEL_BASE           := 0x40400000
+#console=ttyHSL0,115200,n8 androidboot.hardware=qcom
+#androidboot.hardware=qcom usb_id_pin_rework=true no_console_suspend=true zcache
+BOARD_KERNEL_BASE           := 0x48000000
 BOARD_KERNEL_PAGESIZE       := 2048
-BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01400000
+BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01500000
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
